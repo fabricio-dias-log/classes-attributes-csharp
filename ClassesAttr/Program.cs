@@ -21,18 +21,13 @@ class Program
         y.B = double.Parse(s: Console.ReadLine(), CultureInfo.InvariantCulture);
         y.C = double.Parse(s: Console.ReadLine(), CultureInfo.InvariantCulture);
 
-        double xArea, yArea;
-        double xP, yP;
+        double areaX = x.Area();
+        double areaY = y.Area();
 
-        xP = (x.A + x.B + x.C) / 2;
-        xArea = Math.Sqrt(xP * (xP - x.A) * (xP - x.B) * (xP - x.C));
-        Console.WriteLine($"Área de X = {xArea.ToString("F4")}");
+        Console.WriteLine($"Área de X = {areaX.ToString("F4")}");
+        Console.WriteLine($"Área de Y = {areaY.ToString("F4")}");
 
-        yP = (y.A + y.B + y.C) / 2;
-        yArea = Math.Sqrt(yP * (yP - y.A) * (yP - y.B) * (yP - y.C));
-        Console.WriteLine($"Área de X = {yArea.ToString("F4")}");
-
-        if (xArea > yArea)
+        if (areaX > areaY)
         {
             Console.WriteLine("Maior área: X");
         } else
